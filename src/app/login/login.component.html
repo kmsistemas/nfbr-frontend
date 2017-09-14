@@ -1,0 +1,8 @@
+<form [formGroup]="loginForm" novalidate>
+  <input type="text" formControlName="email" id="email" placeholder="E-mail" autocomplete="off">
+  <input type="password" formControlName="password" id="password" placeholder="Senha" autocomplete="off">
+
+  <button (click)="login(loginForm.value)">
+    Entrar
+  </button>
+</form>

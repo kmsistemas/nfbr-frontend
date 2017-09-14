@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+// import {CoreService} from './core/core.service';
 
 @Component({
   selector: 'km-root',
@@ -6,5 +7,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'km';
+  // title = 'km';
 }

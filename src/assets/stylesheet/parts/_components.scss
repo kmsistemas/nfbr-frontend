@@ -1,0 +1,208 @@
+/**
+COMPONENTS
+===========================
+*/
+
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+  width: 100%;
+
+  @media (max-width: 860px) {
+
+  }
+
+  th,
+  td {
+    text-align: left;
+    font-size: $font-small;
+    padding: 10px;
+  }
+
+  tr:nth-child(even) {
+    background: #f9f9f9;
+  }
+
+  td {
+    border-top: 1px solid $light-gray-2;
+    padding: 5px 10px;
+  }
+}
+
+
+/* Edit, Delete */
+
+.edit-link,
+.delete-link {
+  border-radius: 2px;
+  display: inline-block;
+  height: 30px;
+  width: 30px;
+  line-height: 30px;
+  text-decoration: none;
+  font-weight: bold;
+  color: $white;
+  text-align: center;
+  font-size: $font-medium;
+}
+
+.edit-link {
+  background: $light-orange;
+
+  &:hover {
+    background: $orange;
+  }
+}
+
+.delete-link {
+  background: $light-red;
+
+  &:hover {
+    background: $red;
+  }
+}
+
+
+/* Values */
+
+.green-value,
+.red-value {
+  font-weight: bold;
+  font-size: $font-medium;
+}
+
+.green-value {
+  color: $green;
+}
+
+.red-value {
+  color: $red;
+}
+
+
+/* Helper classes */
+
+.algn-center {
+  text-align: center;
+}
+
+
+/* Actions bar */
+
+.actions-bar {
+  border-bottom: 2px solid $light-gray;
+  padding: 10px;
+
+  form {
+    position: relative;
+    float: left;
+
+    @media (max-width: 360px) {
+      float: none;
+    }
+  }
+
+  input {
+    width: 200px;
+
+    @media (max-width: 360px) {
+      margin-bottom: 10px;
+      width: 150px;
+    }
+  }
+
+  button {
+    border: none;
+    background: none;
+    position: relative;
+    outline: none;
+
+    .fa {
+      border-top-right-radius: 2px;
+      border-bottom-right-radius: 2px;
+      height: 30px;
+      width: 30px;
+      line-height: 28px;
+      background: #dadada;
+      float: right;
+      text-align: center;
+      color: $medium-gray-2;
+      position: absolute;
+      right: 0;
+      top: -18px;
+      float: right;
+    }
+  }
+
+  a {
+    height: 30px;
+    line-height: 30px;
+    background: $link-color;
+    color: $white;
+    display: inline-block;
+    padding: 0 10px 0 0;
+    float: right;
+    font-weight: bold;
+    font-size: $font-medium;
+    text-decoration: none;
+    border-radius: 2px;
+
+    @media (max-width: 360px) {
+      float: left;
+    }
+
+    &:hover {
+      opacity: .9;
+    }
+
+    .fa {
+      border-top-left-radius: 2px;
+      border-bottom-left-radius: 2px;
+      height: 30px;
+      width: 30px;
+      line-height: 30px;
+      margin-right: 10px;
+      background: #4876c3;
+      float: left;
+      text-align: center;
+    }
+  }
+}
+
+.actions-bar:after {
+   content: ".";
+   visibility: hidden;
+   display: block;
+   height: 0;
+   clear: both;
+}
+
+
+/* Company list */
+
+.company-list {
+  padding: 0;
+  margin: -2px -15px 0 -15px;
+
+  li {
+    list-style-type: none;
+    margin-top: 2px;
+  }
+
+  a {
+    display: block;
+    height: 46px;
+    line-height: 46px;
+    padding: 0 10px;
+    font-weight: bold;
+    font-size: $font-small;
+    text-decoration: none;
+    border-left: 3px solid $white;
+
+    &:hover {
+      border-left: 3px solid $link-color;
+      background: #fafafa;
+    }
+  }
+}

@@ -1,0 +1,156 @@
+.sub-header {
+  background: $light-gray-5;
+  font-size: $font-small;
+  box-shadow: 0 1px 3px $light-gray-4;
+  margin-top: 1px;
+
+  @media (max-width: 860px) {
+    display: none;
+    background: $white;
+  }
+
+  ul {
+    padding: 0;
+    margin: 0;
+    height: 36px;
+
+    @media (max-width: 860px) {
+      height: auto;
+      padding: 10px 0;
+    }
+  }
+
+  li {
+    list-style-type: none;
+    font-weight: bold;
+    margin-right: 15px;
+    display: inline-block;
+    position: relative;
+
+    @media (max-width: 860px) {
+      display: block;
+      margin-right: 0;
+      margin-bottom: 1px;
+    }
+
+   > a {
+      text-decoration: none;
+      height: 34px;
+      line-height: 36px;
+      display: inline-block;
+      color: $medium-gray;
+      border-bottom: 2px solid $light-gray-5;
+      padding: 0 10px;
+
+      @media (max-width: 860px) {
+        display: block;
+        background: $light-gray;
+        border-bottom: 0;
+      }
+
+      &:hover {
+        background: $white;
+        border-color: $white;
+        color: $link-color;
+      }
+    }
+  }
+
+  .current-link > a {
+    border-bottom: 2px solid $light-green;
+    color: $dark-gray;
+    cursor: default;
+
+    &:hover {
+      background: $light-gray-5;
+      border-color: $light-green;
+    }
+  }
+}
+
+
+/* Dropdown */
+
+.dropdown {
+  box-shadow: 0 1px 3px $light-gray-4;
+  width: 120px;
+  background: $white;
+  position: absolute;
+  left: 50%;
+  margin-left: -70px;
+  top: 34px;
+  z-index: 300;
+  border-top: 2px solid $link-color;
+  padding: 0 10px 10px 10px;
+  display: none;
+
+  @media (max-width: 860px) {
+    width: 100%;
+    margin-left: 0;
+    left: 0;
+    display: block !important;
+    top: 0;
+    border-top: none;
+    box-shadow: none;
+    position: inherit;
+    padding: 0;
+  }
+
+  > div {
+    margin-top: 5px;
+
+    @media (max-width: 860px) {
+      margin-top: 0;
+    }
+  }
+
+  a {
+    color: $medium-gray;
+    text-decoration: none;
+    display: block;
+    margin-top: 10px;
+
+    @media (max-width: 860px) {
+      height: 36px;
+      line-height: 36px;
+      background: $medium-gray;
+      padding: 0 10px;
+      margin-top: 1px;
+      color: $white;
+
+      &:hover {
+        color: $white !important;
+      }
+    }
+
+    &:hover {
+      color: $link-color;
+    }
+  }
+}
+
+.arrow-box {
+  position: relative;
+}
+
+.arrow-box:after {
+  bottom: 100%;
+  left: 50%;
+  border: solid transparent;
+  content: " ";
+  height: 0;
+  width: 0;
+  position: absolute;
+  pointer-events: none;
+  top: -22px;
+
+  @media (max-width: 860px) {
+    display: none;
+  }
+}
+
+.arrow-box:after {
+  border-bottom-color: $link-color;
+  border-width: 5px;
+  margin-left: -5px;
+}

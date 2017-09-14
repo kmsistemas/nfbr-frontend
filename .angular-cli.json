@@ -19,9 +19,17 @@
       "testTsconfig": "tsconfig.spec.json",
       "prefix": "km",
       "styles": [
-        "styles.css"
+        "styles.css",
+        "assets/stylesheet/normalize.css",
+        "assets/stylesheet/plugins/remodal.css",
+        "assets/stylesheet/plugins/remodal-default-theme.css",
+        "assets/public/stylesheet/main.css"
       ],
-      "scripts": [],
+      "scripts": [
+        "assets/js/jquery/jquery.js",
+        "assets/js/main.js",
+        "assets/js/remodal.min.js"
+      ],
       "environmentSource": "environments/environment.ts",
       "environments": {
         "dev": "environments/environment.ts",

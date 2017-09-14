@@ -1,0 +1,143 @@
+/**
+ASIDE
+===========================
+*/
+
+.sidebar {
+  width: 270px;
+  margin-top: 10px;
+  float: right;
+  position: relative;
+
+  h3 {
+    margin: 0 0 25px 0;
+    text-transform: uppercase;
+    font-size: $font-smaller;
+  }
+
+  .node-item {
+    font-size: $font-small;
+    margin-bottom: 1px;
+    position: relative;
+
+    h4 {
+      margin: 0;
+      color: $link-color;
+      padding: 5px 10px;
+      cursor: pointer;
+
+      &:hover {
+        opacity: .7;
+      }
+
+      a {
+        font-size: $font-small;
+        color: $main-green;
+      }
+    }
+
+    ul {
+      padding: 0 10px 7px 10px;
+      background: $white;
+      margin: -5px 0 12px 0;
+      box-shadow: 0 1px 4px rgba(#d9d9d9, .3);
+    }
+
+    li {
+      list-style-type: none;
+    }
+
+    a {
+      color: $medium-gray;
+      text-decoration: none;
+      font-size: $font-smaller;
+
+      &:hover {
+        color: $medium-gray;
+        opacity: .7;
+      }
+    }
+
+    .qt {
+      position: absolute;
+      right: 10px;
+      top: 5px;
+      font-weight: bold;
+      font-size: $font-smaller;
+      background: $green;
+      color: $white;
+      padding: 0 3px;
+      height: 16px;
+      line-height: 16px;
+      border-radius: 2px;
+    }
+  }
+
+  .node-item:nth-child(even) {
+    background: $light-gray-2;
+  }
+
+  .node-item:nth-child(odd) {
+    background: $light-gray-3;
+  }
+
+  .node-item-actived {
+    background: $white !important;
+    margin-top: -1px;
+
+    h4 {
+      color: $main-green !important;
+    }
+
+    .up-status {
+      height: 16px;
+      line-height: 14px;
+      float: right;
+      font-size: $font-smaller;
+      margin: 2px 0 0 0;
+      padding: 0 5px;
+    }
+  }
+}
+
+
+/* Aside pagination */
+
+.aside-pagination {
+  position: absolute;
+  right: 0;
+  top: -10px;
+}
+
+.aside-pag-previous,
+.aside-pag-next {
+  border: 1px solid $light-gray-2;
+  background: $white;
+  width: 34px;
+  height: 34px;
+  line-height: 30px;
+  display: inline-block;
+  float: left;
+  text-align: center;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: $font-large;
+  color: rgba($medium-gray, .5);
+  border-radius: 2px;
+
+  &:hover {
+    border: 1px solid $light-gray-4;
+    color: rgba($link-color, 1);
+  }
+}
+
+.aside-pag-text {
+  font-size: $font-small;
+  margin: 0 10px;
+  color: $medium-gray;
+  font-weight: bold;
+  display: inline-block;
+  float: left;
+  padding-top: 9px;
+  opacity: .5;
+}

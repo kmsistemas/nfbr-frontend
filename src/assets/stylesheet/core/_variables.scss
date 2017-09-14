@@ -1,0 +1,59 @@
+/**
+VARS AND MIXINS
+===========================
+*/
+
+
+/* Color vars */
+
+$white:           #fff;
+$black:           #000;
+$blue:            #4876c3;
+
+$light-red:       #e79393;
+$red:             #cf6d6d;
+
+$light-orange:    #e1c39d;
+$orange:          #e09456;
+
+$light-green:     #7fbf96;
+$green:           #00ad5c;
+
+$light-gray:      #f5f5f5;
+$light-gray-2:    #efefef;
+$light-gray-3:    #f3f3f3;
+$light-gray-4:    #ddd;
+$light-gray-5:    #fafafa;
+
+$medium-gray:     #999;
+$medium-gray-2:   #666;
+$dark-gray:       #333;
+
+$link-color:      #5089e7;
+$main-green:      #239db8;
+
+
+/* Font-size vars */
+
+$font-verysmall:  9px;
+$font-smaller:    11px;
+$font-small:      12px;
+$font-medium:     14px;
+$font-large:      18px;
+$font-big:        24px;
+
+
+/* Font-family vars */
+
+$sans-serif:      "Open Sans", Arial, Helvetica, sans-serif;
+
+
+/* Mixins */
+
+%clearfix {
+  &:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+}

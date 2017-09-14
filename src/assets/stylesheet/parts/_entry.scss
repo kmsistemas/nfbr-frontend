@@ -1,0 +1,22 @@
+/**
+ENTRY
+===========================
+*/
+
+.entry {
+  width: 800px;
+  background: $white;
+  border-bottom: 2px solid $light-gray-2;
+  margin: auto;
+  padding: 0;
+  margin-top: 40px;
+
+  @media (max-width: 860px) {
+    width: 100%;
+  }
+
+  h2 {
+    font-size: $font-medium;
+  }
+}
+

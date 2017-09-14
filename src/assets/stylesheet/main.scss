@@ -1,0 +1,58 @@
+@import "core/variables";
+@import "parts/header";
+@import "parts/sub-header";
+@import "parts/content";
+@import "parts/entry";
+@import "parts/sidebar";
+@import "parts/footer";
+@import "parts/modal";
+@import "parts/forms";
+@import "parts/pagination";
+@import "parts/components";
+@import "parts/responsive";
+
+
+/**
+GENERAL
+===========================
+*/
+
+/* Generic */
+
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-family: $sans-serif;
+  background: $light-gray;
+  color: $dark-gray;
+  margin: 0;
+}
+
+a {
+  color: $link-color;
+}
+
+
+/* Grid */
+
+.holder {
+  width: 85%;
+  margin: auto;
+
+  @media (max-width: 860px) {
+    width: 94%;
+  }
+}
+
+.column-01,
+.column-02 {
+  width: 45%;
+}
+
+.column-01 {
+  float: left;
+}
+
+.column-02 {
+  float: right;
+}

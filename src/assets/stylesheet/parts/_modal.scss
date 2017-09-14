@@ -1,0 +1,32 @@
+/**
+REMODAL
+===========================
+*/
+
+.remodal {
+  width: 370px;
+  font-family: $sans-serif;
+  background: $white;
+  color: $dark-gray;
+  border: 7px solid $light-gray-2;
+  text-align: left;
+  padding: 0 15px 0 15px;
+
+  h2 {
+    background: $light-gray-2;
+    font-size: $font-medium;
+    margin: -5px -20px 0 -20px;
+    height: 50px;
+    line-height: 50px;
+    padding: 0 16px;
+  }
+}
+
+.remodal-close {
+  color: rgba($dark-gray, .5);
+
+  &:hover {
+    color: rgba($dark-gray, 1);
+  }
+}
+

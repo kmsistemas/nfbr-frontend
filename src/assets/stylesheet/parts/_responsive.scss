@@ -1,0 +1,66 @@
+/**
+RESPONSIVE
+===========================
+*/
+
+
+/* Viewports */
+
+html,
+body {
+  width: 100%;
+  overflow-x: hidden;
+}
+
+@viewport {
+  zoom: 1.0;
+  width: extend-to-zoom;
+}
+
+@-ms-viewport {
+  width: extend-to-zoom;
+  zoom: 1.0;
+}
+
+
+/* Smartphones */
+
+@media (max-width: 860px) {
+
+  .menu-trigger {
+    display: inline-block; /* Enable mobile menu trigger. */
+    background: $light-green;
+    color: $white;
+    height: 30px;
+    line-height: 30px;
+    border-radius: 2px;
+    text-decoration: none;
+    padding: 0 10px;
+    position: absolute;
+    right: 0;
+    top: 16px;
+    z-index: 200;
+    text-transform: uppercase;
+    font-size: $font-small;
+    font-weight: bold;
+
+    &:hover {
+      opacity: .9;
+      color: #fff;
+      text-decoration: none;
+      cursor: pointer;
+    }
+  }
+}
+
+@media (max-width: 460px) {
+
+  .remodal {
+    width: 100% !important;
+
+    input[type="text"] {
+      width: 96% !important;
+      padding: 0 2% !important;
+    }
+  }
+}

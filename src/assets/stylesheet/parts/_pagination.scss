@@ -1,0 +1,41 @@
+.pagination {
+  padding: 0;
+  margin: 40px 0 90px 0;
+  text-align: center;
+
+  @media (max-width: 460px) {
+    margin-bottom: 0;
+  }
+
+  li {
+    list-style-type: none;
+    display: inline-block;
+    margin: 0 3px;
+  }
+
+  a,
+  button {
+    border-radius: 2px;
+    display: inline-block;
+    height: 30px;
+    line-height: 28px;
+    width: 30px;
+    text-align: center;
+    color: $link-color;
+    text-decoration: none;
+    font-weight: bold;
+    background: $white;
+    padding: 0;
+    border: 1px solid $light-gray-4;
+
+    &:hover {
+      border-color: $light-green;
+    }
+  }
+
+  .current-page {
+    background: $light-green;
+    border-color: $light-green;
+    color: $white;
+  }
+}

@@ -1,0 +1,52 @@
+<section class="entry">
+
+  <div class="actions-bar">
+    <form action="#">
+      <input type="text" placeholder="Filtrar">
+      <button>
+        <i class="fa fa-search"></i>
+      </button>
+    </form>
+    <a href="#">
+      <i class="fa fa-plus"></i>Adicionar
+    </a>
+  </div>
+
+  <div style="overflow-x: auto;">
+    <table>
+      <thead>
+        <tr>
+          <th class="algn-center">#</th>
+          <th>SIGLA</th>
+          <th>DESCRIÇÃO</th>
+          <th class="algn-center">Ações</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let unidadeMedida of unidadesMedida">
+          <td class="algn-center">
+            <strong>{{unidadeMedida.id_unidade_medida}}</strong>
+          </td>
+          <td>{{unidadeMedida.sigla}}</td>
+          <td>{{unidadeMedida.descricao}}</td>
+          <td class="algn-center">
+            <a class="edit-link" href="#"><i class="fa fa-pencil"></i></a>
+            <a class="delete-link" href="#"><i class="fa fa-trash"></i></a>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+</section> <!-- /entry -->
+
+<!-- list.component.html -->
+<km-pagination
+  (goPage)="goToPage($event)"
+  (goNext)="onNext()"
+  (goPrev)="onPrev()"
+  [pagesToShow]="3"
+  [page]="page"
+  [perPage]="limit"
+  [count]="total">
+</km-pagination>

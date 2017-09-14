@@ -1,0 +1,28 @@
+/**
+CONTENT
+===========================
+*/
+
+.content {
+  @extend %clearfix;
+
+  p {
+    margin: 15px 0 0 0;
+    color: $dark-gray;
+  }
+
+  h2 {
+    font-size: $font-small;
+    color: $black;
+    margin: 20px 0 -10px 0;
+  }
+
+  h3 {
+    margin: 0;
+  }
+
+  h3,
+  li {
+    font-size: $font-medium;
+  }
+}
