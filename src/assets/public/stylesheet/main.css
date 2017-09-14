@@ -735,6 +735,8 @@ table {
   table td {
     border-top: 1px solid #efefef;
     padding: 5px 10px; }
+  table td:last-child {
+    text-align: right; }
 
 /* Edit, Delete */
 .edit-link,
