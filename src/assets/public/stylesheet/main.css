@@ -85,7 +85,8 @@ header {
     margin-left: 0; }
   @media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min-device-pixel-ratio: 2) {
     header li a {
-      background: url("../../images/icons-sprite@2x.png") no-repeat; } }
+      background: url("../../images/icons-sprite@2x.png") no-repeat;
+      background-size: 24px 72px; } }
 
 .main-current-link {
   position: relative; }

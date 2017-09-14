@@ -107,8 +107,10 @@ header {
   only screen and (min-device-pixel-ratio: 2) {
 
     li {
+
       a {
         background: url("../../images/icons-sprite@2x.png") no-repeat;
+        background-size: 24px 72px;
       }
     }
   }
