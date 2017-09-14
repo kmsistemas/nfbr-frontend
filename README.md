@@ -29,7 +29,7 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 
 ## FrontEnd Development
 
-Run `cp src/environments/env-sample src/environments/.env.ts`
-Configure the parameters in file
-Run `npm install`
-Run `npm start`
+Run `cp src/environments/env-sample src/environments/.env.ts`  
+Configure the parameters in file  
+Run `npm install`  
+Run `npm start`  
