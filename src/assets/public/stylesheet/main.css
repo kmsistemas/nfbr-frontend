@@ -522,14 +522,17 @@ REMODAL
   padding: 0 15px 0 15px; }
   .remodal h2 {
     background: #efefef;
-    font-size: 14px;
+    font-size: 12px;
+    text-transform: uppercase;
     margin: -5px -20px 0 -20px;
-    height: 50px;
-    line-height: 50px;
+    height: 45px;
+    line-height: 45px;
     padding: 0 16px; }
 
 .remodal-close {
-  color: rgba(51, 51, 51, 0.5); }
+  color: rgba(51, 51, 51, 0.5);
+  margin-top: -3px;
+  margin-right: -10px; }
   .remodal-close:hover {
     color: #333333; }
 
