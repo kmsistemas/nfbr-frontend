@@ -13,6 +13,8 @@ import { PaginationComponent } from './shared/pagination/pagination.component';
 import { LoginComponent } from './login/login.component';
 import {SharedModule} from "./shared/shared.module";
 import { FooterComponent } from './footer/footer.component';
+import { UnidadeMedidaComponent } from './unidades-medida/unidade-medida/unidade-medida.component';
+import { HomeComponent } from './home/home.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +24,9 @@ import { FooterComponent } from './footer/footer.component';
     UfsComponent,
     // PaginationComponent,
     LoginComponent,
-    FooterComponent
+    FooterComponent,
+    UnidadeMedidaComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
