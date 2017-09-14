@@ -75,9 +75,6 @@ header {
       padding-left: 30px; }
       header li a:hover {
         opacity: .7; }
-    @media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min-device-pixel-ratio: 2) {
-      header li a {
-        background: url("../../images/icons-sprite@2x.png") no-repeat; } }
   header .product {
     background-position: 0 0; }
   header .nfce {
@@ -86,6 +83,9 @@ header {
     background-position: 0 -48px; }
   header li:first-child {
     margin-left: 0; }
+  @media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min-device-pixel-ratio: 2) {
+    header li a {
+      background: url("../../images/icons-sprite@2x.png") no-repeat; } }
 
 .main-current-link {
   position: relative; }
