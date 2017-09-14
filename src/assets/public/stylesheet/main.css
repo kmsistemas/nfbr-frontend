@@ -293,6 +293,20 @@ ENTRY
   .entry h2 {
     font-size: 14px; }
 
+.form-entry {
+  margin-bottom: 85px; }
+  @media (max-width: 860px) {
+    .form-entry {
+      margin-bottom: 0; } }
+
+.login-entry {
+  width: 300px;
+  margin-bottom: 85px; }
+  @media (max-width: 860px) {
+    .login-entry {
+      width: 100%;
+      margin-bottom: 0; } }
+
 /**
 ASIDE
 ===========================
@@ -525,6 +539,9 @@ form label {
 form .check {
   margin-bottom: 0; }
 form input[type="text"],
+form input[type="email"],
+form input[type="tel"],
+form input[type="password"],
 form textarea {
   border-radius: 2px;
   border: 1px solid #ddd;
@@ -559,23 +576,19 @@ form input[type="submit"] {
 form input[type="checkbox"] {
   margin-right: 3px; }
 
-.form-entry {
-  margin-bottom: 85px; }
-  @media (max-width: 860px) {
-    .form-entry {
-      margin-bottom: 0; } }
-
 .general-form {
   padding: 5px 20px 20px 20px; }
   .general-form input[type="text"],
   .general-form input[type="email"],
   .general-form input[type="tel"],
+  .general-form input[type="password"],
   .general-form select,
   .general-form textarea {
     width: 100%; }
   .general-form input[type="text"],
   .general-form input[type="email"],
   .general-form input[type="tel"],
+  .general-form input[type="password"],
   .general-form select {
     height: 36px;
     line-height: 36px; }

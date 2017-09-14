@@ -27,6 +27,9 @@ form {
   }
 
   input[type="text"],
+  input[type="email"],
+  input[type="tel"],
+  input[type="password"],
   textarea {
     border-radius: 2px;
     border: 1px solid $light-gray-4;
@@ -71,20 +74,13 @@ form {
   }
 }
 
-.form-entry {
-  margin-bottom: 85px;
-
-  @media (max-width: 860px) {
-    margin-bottom: 0;
-  }
-}
-
 .general-form {
   padding: 5px 20px 20px 20px;
 
   input[type="text"],
   input[type="email"],
   input[type="tel"],
+  input[type="password"],
   select,
   textarea {
     width: 100%;
@@ -93,6 +89,7 @@ form {
   input[type="text"],
   input[type="email"],
   input[type="tel"],
+  input[type="password"],
   select {
     height: 36px;
     line-height: 36px;

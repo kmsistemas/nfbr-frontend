@@ -20,3 +20,21 @@ ENTRY
   }
 }
 
+.form-entry {
+  margin-bottom: 85px;
+
+  @media (max-width: 860px) {
+    margin-bottom: 0;
+  }
+}
+
+.login-entry {
+  width: 300px;
+  margin-bottom: 85px;
+
+  @media (max-width: 860px) {
+    width: 100%;
+    margin-bottom: 0;
+  }
+}
+
