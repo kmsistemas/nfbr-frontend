@@ -15,6 +15,7 @@ import {SharedModule} from "./shared/shared.module";
 import { FooterComponent } from './footer/footer.component';
 import { UnidadeMedidaComponent } from './unidades-medida/unidade-medida/unidade-medida.component';
 import { HomeComponent } from './home/home.component';
+import {PublicGuard, ProtectedGuard} from "ngx-auth";
 
 @NgModule({
   declarations: [
@@ -31,13 +32,14 @@ import { HomeComponent } from './home/home.component';
   imports: [
     BrowserModule,
     HttpModule,
-    // CoreModule,
+    CoreModule,
 
     SharedModule.forRoot(),
 
     RouterModule.forRoot(ROUTES, {preloadingStrategy: PreloadAllModules})
   ],
   providers: [
+    // PublicGuard, ProtectedGuard,
     {provide: LOCALE_ID, useValue: 'pt-BR'}
   ],
   bootstrap: [AppComponent]

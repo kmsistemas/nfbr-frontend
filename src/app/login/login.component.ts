@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {CoreService} from '../core/core.service';
 import {env} from '../../environments/.env';
+import {Router} from "@angular/router";
+import {AuthenticationService} from "../core/authentication.service";
 
 @Component({
   selector: 'km-login',
@@ -13,7 +15,12 @@ export class LoginComponent implements OnInit {
 
   loginForm: FormGroup;
 
-  constructor(private coreService: CoreService, private formBuilder: FormBuilder) { }
+  constructor(
+    private coreService: CoreService,
+    private formBuilder: FormBuilder,
+    private router: Router,
+    private authService: AuthenticationService
+  ) { }
 
   ngOnInit() {
     this.loginForm = this.formBuilder.group({
@@ -22,9 +29,15 @@ export class LoginComponent implements OnInit {
     });
   }
 
-  login(form: any) {
-    console.log(form);
-    this.coreService.login(form).subscribe(() => {});
+  // login(form: any) {
+  //   console.log(form);
+  //   this.coreService.login(form).subscribe(() => {});
+  // }
+
+  public login(form: any) {
+    this.coreService
+      .login(form)
+      .subscribe(() => this.router.navigateByUrl('/'));
   }
 
 }
