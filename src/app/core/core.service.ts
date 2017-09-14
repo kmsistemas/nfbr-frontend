@@ -25,6 +25,23 @@ export class CoreService {
     // this.headers.append('Content-Type', 'application/x-www-form-urlencoded');
     //
     // this.options = new RequestOptions({ headers: this.headers });
+
+    this.loadCurrentUser();
+  }
+
+  loadCurrentUser() {
+    const currentUser = JSON.parse(localStorage.getItem('currentUser'));
+    const accessToken = JSON.parse(localStorage.getItem('accessToken'));
+
+    if (accessToken) {
+      this.token = accessToken.token;
+      this.contribuinte = currentUser.contribuinte;
+      this.email = currentUser.email;
+      this.avatar = currentUser.get_avatar_url;
+
+      this.headers.append('Authorization', 'JWT ' + this.token);
+      this.options = new RequestOptions({headers: this.headers});
+    }
   }
 
   login(form: any) {
@@ -33,13 +50,25 @@ export class CoreService {
       {email: form.email, password: form.password}
     ).map(response => {
       console.log(response.json());
-      this.token = response.json().token;
-      this.contribuinte = response.json().user.contribuinte;
-      this.email = response.json().user.email;
-      this.avatar = response.json().user.get_avatar_url;
 
-      this.headers.append('Authorization', 'JWT ' + this.token);
-      this.options = new RequestOptions({ headers: this.headers });
+      localStorage.setItem('currentUser', JSON.stringify({
+        // token: response.json().token,
+        contribuinte: response.json().user.contribuinte,
+        email: response.json().user.email,
+        avatar: response.json().user.get_avatar_url
+      }));
+
+      localStorage.setItem('accessToken', JSON.stringify({ token: response.json().token }));
+
+      // this.token = response.json().token;
+      // this.contribuinte = response.json().user.contribuinte;
+      // this.email = response.json().user.email;
+      // this.avatar = response.json().user.get_avatar_url;
+      //
+      // this.headers.append('Authorization', 'JWT ' + this.token);
+      // this.options = new RequestOptions({ headers: this.headers });
+
+      this.loadCurrentUser();
     });
   }
 
