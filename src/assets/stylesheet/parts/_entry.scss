@@ -31,10 +31,20 @@ ENTRY
 .login-entry {
   width: 300px;
   margin-bottom: 85px;
+  border-top: 3px solid $light-green;
 
   @media (max-width: 860px) {
     width: 100%;
     margin-bottom: 0;
+  }
+
+  h2 {
+    font-size: $font-large;
+    text-align: center;
+    margin-bottom: 10px;
+    margin-top: 5px;
+    padding-bottom: 11px;
+    border-bottom: 1px solid $light-gray-2;
   }
 }
 
