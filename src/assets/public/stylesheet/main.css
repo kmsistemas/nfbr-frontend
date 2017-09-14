@@ -798,7 +798,8 @@ table {
     border: none;
     background: none;
     position: relative;
-    outline: none; }
+    outline: none;
+    cursor: pointer; }
     .actions-bar button .fa {
       border-top-right-radius: 2px;
       border-bottom-right-radius: 2px;
@@ -813,6 +814,9 @@ table {
       right: 0;
       top: -18px;
       float: right; }
+@-moz-document url-prefix() {
+  .actions-bar button .fa {
+    top: -20px; } }
   .actions-bar a {
     height: 30px;
     line-height: 30px;

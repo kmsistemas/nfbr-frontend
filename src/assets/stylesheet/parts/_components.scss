@@ -121,6 +121,7 @@ table {
     background: none;
     position: relative;
     outline: none;
+    cursor: pointer;
 
     .fa {
       border-top-right-radius: 2px;
@@ -136,6 +137,13 @@ table {
       right: 0;
       top: -18px;
       float: right;
+    }
+
+    @-moz-document url-prefix() {
+
+      .fa {
+        top: -20px;
+      }
     }
   }
 
