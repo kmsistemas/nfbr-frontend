@@ -1,8 +1,19 @@
-<form [formGroup]="loginForm" novalidate>
-  <input type="text" formControlName="email" id="email" placeholder="E-mail" autocomplete="off">
-  <input type="password" formControlName="password" id="password" placeholder="Senha" autocomplete="off">
+<section class="entry login-entry">
 
-  <button (click)="login(loginForm.value)">
-    Entrar
-  </button>
-</form>
+  <form [formGroup]="loginForm" novalidate class="general-form">
+    <div class="col-large">
+      <label>Login</label>
+      <input type="text" formControlName="email" id="email" placeholder="E-mail" autocomplete="off">
+    </div>
+    <div class="col-large">
+      <label>Senha</label>
+      <input type="password" formControlName="password" id="password" placeholder="Senha" autocomplete="off">
+    </div>
+    <div class="form-nav">
+      <button (click)="login(loginForm.value)">
+        Entrar
+      </button>
+    </div>
+  </form>
+
+</section>
