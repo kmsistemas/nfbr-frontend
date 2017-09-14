@@ -56,6 +56,7 @@ form {
     text-decoration: none;
     font-weight: bold;
     font-size: $font-small;
+    text-transform: uppercase;
     border: none;
     outline: none;
 
@@ -137,7 +138,8 @@ form {
     border: none;
     color: $white;
     font-weight: bold;
-    font-size: $font-medium;
+    font-size: $font-small;
+    text-transform: uppercase;
     padding: 0 15px;
     outline: none;
     border-bottom: 2px solid #629a76;
