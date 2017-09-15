@@ -310,7 +310,8 @@ ENTRY
 .login-entry {
   width: 300px;
   margin-bottom: 85px;
-  border-top: 3px solid #7fbf96; }
+  border-top: 3px solid #7fbf96;
+  min-height: auto; }
   @media (max-width: 860px) {
     .login-entry {
       width: 100%;
