@@ -734,7 +734,8 @@ form input[type="checkbox"] {
     font-weight: bold;
     background: #fff;
     padding: 0;
-    border: 1px solid #ddd; }
+    border: 1px solid #ddd;
+    cursor: pointer; }
     .pagination a:hover,
     .pagination button:hover {
       border-color: #7fbf96; }
@@ -742,6 +743,11 @@ form input[type="checkbox"] {
     background: #7fbf96;
     border-color: #7fbf96;
     color: #fff; }
+
+.fa-angle-right,
+.fa-angle-left {
+  font-weight: bold;
+  font-size: 18px; }
 
 /**
 COMPONENTS

@@ -1,7 +1,15 @@
 <ul class="pagination">
-  <li><button (click)="onPrev()" [disabled]="page === 1 || loading">&lt;</button></li>
+  <li>
+    <button (click)="onPrev()" [disabled]="page === 1 || loading">
+      <i class="fa fa-angle-left" aria-hidden="true"></i>
+    </button>
+  </li>
   <li *ngFor="let pageNum of getPages()">
     <button (click)="onPage(pageNum)" [class.current-page]="pageNum === page">{{ pageNum }}</button>
   </li>
-  <li><button (click)="onNext(true)" [disabled]="lastPage() || loading">&gt;</button></li>
+  <li>
+  <button (click)="onNext(true)" [disabled]="lastPage() || loading">
+    <i class="fa fa-angle-right" aria-hidden="true"></i>
+  </button>
+  </li>
 </ul>

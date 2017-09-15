@@ -27,6 +27,7 @@
     background: $white;
     padding: 0;
     border: 1px solid $light-gray-4;
+    cursor: pointer;
 
     &:hover {
       border-color: $light-green;
@@ -38,4 +39,10 @@
     border-color: $light-green;
     color: $white;
   }
+}
+
+.fa-angle-right,
+.fa-angle-left {
+  font-weight: bold;
+  font-size: $font-large;
 }
