@@ -18,6 +18,7 @@ export class CoreService {
 
   private token: string;
   contribuinte: string;
+  contribuintes: any = [];
   email: string;
   avatar: string;
 
@@ -30,7 +31,7 @@ export class CoreService {
     this.loadCurrentUser();
   }
 
-  loadCurrentUser() {
+  loadCurrentUser(refreshContribuinte: boolean = false) {
     const currentUser = JSON.parse(localStorage.getItem('currentUser'));
     const accessToken = JSON.parse(localStorage.getItem('accessToken'));
 
@@ -40,9 +41,29 @@ export class CoreService {
       this.email = currentUser.email;
       this.avatar = currentUser.avatar;
 
-      this.headers.append('Authorization', 'JWT ' + this.token);
+      this.headers.set('Authorization', 'JWT ' + this.token);
       this.options = new RequestOptions({headers: this.headers});
+
+      if (!refreshContribuinte) {
+        this.getContribuintes();
+      }
     }
+  }
+
+  alterar_contribuinte(pk: number) {
+    return this.http.post(
+      `${NFBR_API}/alterar_contribuinte_post/`,
+      {pk: pk}, this.options
+    ).map(response => {
+
+      const currentUserFromLocalStorage = JSON.parse(localStorage.getItem('currentUser'));
+      currentUserFromLocalStorage.contribuinte = response.json().contribuinte;
+      localStorage.setItem('currentUser', JSON.stringify(currentUserFromLocalStorage));
+
+      this.loadCurrentUser(true);
+
+      // this.logout();
+    });
   }
 
   login(form: any) {
@@ -50,7 +71,6 @@ export class CoreService {
       `${NFBR_API_TOKEN_AUTH}`,
       {email: form.email, password: form.password}
     ).map(response => {
-      console.log(response.json());
 
       localStorage.setItem('currentUser', JSON.stringify({
         // token: response.json().token,
@@ -89,7 +109,7 @@ export class CoreService {
   logout() {
     localStorage.removeItem('currentUser');
     localStorage.removeItem('accessToken');
-
+    console.log('by');
     this.router.navigate(['/']);
   }
 
@@ -107,6 +127,14 @@ export class CoreService {
     return this.http.get(`${NFBR_API}/uf/`, this.options)
       .map(response => response.json().results)
       .catch(ErrorHandler.handlerError);
+  }
+
+  getContribuintes(): void {
+    this.http.get(`${NFBR_API}/alterar_contribuinte/`, this.options)
+    .map(response => response.json().results)
+    .catch(ErrorHandler.handlerError).subscribe(response => {
+      this.contribuintes = response;
+    });
   }
 
 }

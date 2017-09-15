@@ -2,9 +2,7 @@
   <button data-remodal-action="close" class="remodal-close"></button>
   <h2>Selecione uma empresa</h2>
   <ul class="company-list">
-    <li><a href="#">Empresa número 1</a></li>
-    <li><a href="#">Empresa número 2</a></li>
-    <li><a href="#">Empresa número 3</a></li>
+    <li *ngFor="let c of contribuintes()"><a href="#" (click)="alterar_contribuinte(c.id_contribuinte)">{{c.id_contribuinte}} - {{c.razao}}</a></li>
   </ul>
 </div> <!-- /modal-add-node -->
 
@@ -13,7 +11,7 @@
     <img src="{{avatar()}}">
     <ul class="ft-list-01">
       <li>{{email()}}</li>
-      <li><a href="#" tabindex="11" data-remodal-target="change-company">Trocar empresa</a></li>
+      <li><a [routerLink]="['/']" tabindex="11" data-remodal-target="change-company">Trocar empresa</a></li>
       <li><a href="/" (click)="logout()" class="logout" tabindex="12">Sair</a></li>
     </ul>
     <ul class="ft-list-02">

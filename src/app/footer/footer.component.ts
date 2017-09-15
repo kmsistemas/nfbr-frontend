@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {CoreService} from '../core/core.service';
 
+
 @Component({
   selector: 'km-footer',
   templateUrl: './footer.component.html',
@@ -8,7 +9,8 @@ import {CoreService} from '../core/core.service';
 })
 export class FooterComponent implements OnInit {
 
-  constructor(private coreService: CoreService) { }
+  constructor(private coreService: CoreService) {
+  }
 
   ngOnInit() {
   }
@@ -24,6 +26,14 @@ export class FooterComponent implements OnInit {
   logout(): void {
     console.log('by');
     this.coreService.logout();
+  }
+
+  contribuintes(): any {
+    return this.coreService.contribuintes;
+  }
+
+  alterar_contribuinte(pk: number) {
+    this.coreService.alterar_contribuinte(pk).subscribe();
   }
 
 }
