@@ -22,4 +22,6 @@ Index = {
 
 $(document).ready(function() {
   Index.init();
+
+  $('#id-ncm').select2();
 });
