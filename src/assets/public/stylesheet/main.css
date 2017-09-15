@@ -202,7 +202,7 @@ header {
   top: 34px;
   z-index: 300;
   border-top: 2px solid #5089e7;
-  padding: 0 10px 10px 10px;
+  padding: 5px 10px 10px 10px;
   display: none; }
   @media (max-width: 860px) {
     .dropdown {
@@ -214,7 +214,8 @@ header {
       border-top: none;
       box-shadow: none;
       position: inherit;
-      padding: 0; } }
+      padding: 0;
+      min-height: 140px; } }
   .dropdown > div {
     margin-top: 5px; }
     @media (max-width: 860px) {
@@ -224,7 +225,8 @@ header {
     color: #999;
     text-decoration: none;
     display: block;
-    margin-top: 10px; }
+    margin-top: 5px;
+    cursor: pointer; }
     @media (max-width: 860px) {
       .dropdown a {
         height: 36px;
@@ -277,12 +279,16 @@ CONTENT
 .content li {
   font-size: 14px; }
 
+.home-content {
+  padding: 5px 20px 20px 20px; }
+
 /**
 ENTRY
 ===========================
 */
 .entry {
   width: 800px;
+  min-height: 300px;
   background: #fff;
   border-bottom: 2px solid #efefef;
   margin: auto;
@@ -290,7 +296,8 @@ ENTRY
   margin-top: 40px; }
   @media (max-width: 860px) {
     .entry {
-      width: 100%; } }
+      width: 100%;
+      min-height: auto; } }
   .entry h2 {
     font-size: 14px; }
 

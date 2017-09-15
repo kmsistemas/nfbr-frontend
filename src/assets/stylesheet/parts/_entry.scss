@@ -5,6 +5,7 @@ ENTRY
 
 .entry {
   width: 800px;
+  min-height: 300px;
   background: $white;
   border-bottom: 2px solid $light-gray-2;
   margin: auto;
@@ -13,6 +14,7 @@ ENTRY
 
   @media (max-width: 860px) {
     width: 100%;
+    min-height: auto;
   }
 
   h2 {

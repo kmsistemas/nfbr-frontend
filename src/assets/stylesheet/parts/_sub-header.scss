@@ -81,7 +81,7 @@
   top: 34px;
   z-index: 300;
   border-top: 2px solid $link-color;
-  padding: 0 10px 10px 10px;
+  padding: 5px 10px 10px 10px;
   display: none;
 
   @media (max-width: 860px) {
@@ -94,6 +94,7 @@
     box-shadow: none;
     position: inherit;
     padding: 0;
+    min-height: 140px;
   }
 
   > div {
@@ -108,7 +109,8 @@
     color: $medium-gray;
     text-decoration: none;
     display: block;
-    margin-top: 10px;
+    margin-top: 5px;
+    cursor: pointer;
 
     @media (max-width: 860px) {
       height: 36px;
