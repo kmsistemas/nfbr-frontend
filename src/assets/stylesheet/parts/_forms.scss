@@ -209,8 +209,9 @@ form {
   border-radius: 2px;
   overflow: hidden;
   background-color: #fff;
-  background: #fff url("/src/assets/images/arrow.jpg") no-repeat right;
-  background-size: 20px;
+  background: #fff url("https://imageog.flaticon.com/icons/png/512/37/37411.png") no-repeat right center;
+  background-position-x: calc(100% - 10px);
+  background-size: 7px;
 }
 
 .select-style select {
