@@ -11,7 +11,7 @@
       <input type="password" formControlName="password" id="password" placeholder="Senha" autocomplete="off">
     </div>
     <div class="form-nav">
-      <button (click)="login(loginForm.value)">
+      <button (click)="login(loginForm.value)" [disabled]="!loginForm.valid">
         Entrar
       </button>
     </div>

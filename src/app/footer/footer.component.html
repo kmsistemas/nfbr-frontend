@@ -9,12 +9,12 @@
 </div> <!-- /modal-add-node -->
 
 <footer>
-  <div class="holder">
+  <div class="holder" *ngIf="email()">
     <img src="{{avatar()}}">
     <ul class="ft-list-01">
       <li>{{email()}}</li>
       <li><a href="#" tabindex="11" data-remodal-target="change-company">Trocar empresa</a></li>
-      <li><a href="#" class="logout" tabindex="12">Sair</a></li>
+      <li><a href="/" (click)="logout()" class="logout" tabindex="12">Sair</a></li>
     </ul>
     <ul class="ft-list-02">
       <li><strong>Sessão:</strong> 42%</li>

@@ -21,4 +21,9 @@ export class FooterComponent implements OnInit {
     return this.coreService.avatar;
   }
 
+  logout(): void {
+    console.log('by');
+    this.coreService.logout();
+  }
+
 }

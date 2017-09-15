@@ -4,18 +4,18 @@
       <img src="assets/images/logo.png">
     </a>
     <h1>{{contribuinte()}}</h1>
-    <nav>
+    <nav *ngIf="contribuinte()">
       <ul>
         <li><a href="#" class="product" href="#" tabindex="2">Produto</a></li>
         <li><a href="#" class="nfce" tabindex="3">NFCe</a></li>
         <li><a href="#" class="nfcemonitor" tabindex="4">Monitor NFCe</a></li>
       </ul>
     </nav>
-    <a class="menu-trigger">Menu</a>
+    <a class="menu-trigger" *ngIf="contribuinte()">Menu</a>
   </div>
 </header>
 
-<div class="sub-header">
+<div class="sub-header" [hidden]="!contribuinte()">
   <div class="holder">
     <ul>
       <li><a [routerLink]="['/']" tabindex="5">Início</a></li>

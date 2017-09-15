@@ -1,4 +1,5 @@
 import {Http, Headers, RequestOptions} from '@angular/http';
+import {Router} from '@angular/router';
 import {Injectable} from '@angular/core';
 import {Observable} from 'rxjs/Observable';
 import 'rxjs/add/operator/switchMap';
@@ -20,7 +21,7 @@ export class CoreService {
   email: string;
   avatar: string;
 
-  constructor(private http: Http) {
+  constructor(private http: Http, private router: Router) {
     // this.headers.append('Authorization', 'Basic ' + btoa(this.username + ':' + this.password));
     // this.headers.append('Content-Type', 'application/x-www-form-urlencoded');
     //
@@ -37,7 +38,7 @@ export class CoreService {
       this.token = accessToken.token;
       this.contribuinte = currentUser.contribuinte;
       this.email = currentUser.email;
-      this.avatar = currentUser.get_avatar_url;
+      this.avatar = currentUser.avatar;
 
       this.headers.append('Authorization', 'JWT ' + this.token);
       this.options = new RequestOptions({headers: this.headers});
@@ -84,6 +85,13 @@ export class CoreService {
   //     });
   //   }
   // }
+
+  logout() {
+    localStorage.removeItem('currentUser');
+    localStorage.removeItem('accessToken');
+
+    this.router.navigate(['/']);
+  }
 
   unidadeMedida(page?: number, limit?: number): Observable<any> {
     // aqui tem que chamar refresh() antes...
