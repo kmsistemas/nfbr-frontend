@@ -719,6 +719,36 @@ form input[type="checkbox"] {
 .select-style select:focus {
   outline: none; }
 
+/* SELECT 2 */
+.select2-selection {
+  border-radius: 2px !important;
+  height: 36px !important;
+  line-height: 36px !important;
+  border: 1px solid #ddd !important;
+  color: #333 !important;
+  font-family: "Open Sans", Arial, Helvetica, sans-serif !important;
+  font-size: 14px !important; }
+
+.select2-selection__placeholder {
+  line-height: 32px !important;
+  color: #333 !important; }
+
+.select2-selection__rendered {
+  height: 36px !important;
+  line-height: 34px !important; }
+
+.select2-selection__arrow {
+  top: 5px !important;
+  right: 5px !important;
+  color: #000 !important; }
+  .select2-selection__arrow b {
+    color: #000 !important; }
+
+.select2-result-repository {
+  color: #333 !important;
+  font-family: "Open Sans", Arial, Helvetica, sans-serif !important;
+  font-size: 14px !important; }
+
 .pagination {
   padding: 0;
   margin: 40px 0 90px 0;

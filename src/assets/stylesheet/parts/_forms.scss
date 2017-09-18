@@ -201,7 +201,7 @@ form {
 
 /* Custom select */
 
-.select-style {
+.select-style, {
   padding: 0;
   margin: 0;
   border: 1px solid $light-gray-4;
@@ -230,4 +230,43 @@ form {
 
 .select-style select:focus {
    outline: none;
+}
+
+
+/* SELECT 2 */
+
+.select2-selection {
+  border-radius: 2px !important;
+  height: 36px !important;
+  line-height: 36px !important;
+  border: 1px solid $light-gray-4 !important;
+  color: $dark-gray !important;
+  font-family: $sans-serif !important;
+  font-size: $font-medium !important;
+}
+
+.select2-selection__placeholder {
+  line-height: 32px !important;
+  color: $dark-gray !important;
+}
+
+.select2-selection__rendered {
+  height: 36px !important;
+  line-height: 34px !important;
+}
+
+.select2-selection__arrow {
+  top: 5px !important;
+  right: 5px !important;
+  color: $black !important;
+
+  b {
+    color: $black !important;
+  }
+}
+
+.select2-result-repository {
+  color: $dark-gray !important;
+  font-family: $sans-serif !important;
+  font-size: $font-medium !important;
 }
