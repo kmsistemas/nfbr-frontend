@@ -739,10 +739,7 @@ form input[type="checkbox"] {
 
 .select2-selection__arrow {
   top: 5px !important;
-  right: 5px !important;
-  color: #000 !important; }
-  .select2-selection__arrow b {
-    color: #000 !important; }
+  right: 5px !important; }
 
 .select2-result-repository {
   color: #333 !important;
