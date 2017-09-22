@@ -1,72 +1,97 @@
 <section class="entry form-entry">
 
-  <form action="#" class="general-form">
-    <div class="col-medium">
-      <label for="name">Código</label>
-      <input type="text">
-    </div>
-    <div class="col-small">
-      <label for="name">Situação</label>
-      <div class="select-style">
-        <select type="text">
-          <option>Ativo</option>
-          <option>Inativo</option>
-        </select>
-      </div>
-    </div>
-    <div class="col-large">
-      <label for="name">Descrição</label>
-      <textarea></textarea>
-    </div>
-    <div class="col-medium">
-      <label for="name">Preço venda</label>
-      <input type="text">
-    </div>
-    <div class="col-medium">
-      <label for="name">Preço atacado</label>
-      <input type="text">
-      <span class="error">Preencha este campo</span>
-    </div>
-    <div class="col-medium">
-      <label for="name">ID unidade medida</label>
-      <div class="select-style">
-        <select type="text">
-          <option>Unidade(s)</option>
-          <option>Litro(s)</option>
-          <option>Caixa(s)</option>
-        </select>
-      </div>
-    </div>
-    <div class="col-medium">
-      <label for="name">ID ncm</label>
-      <select id="id-ncm">
-      </select>
-    </div>
-    <div class="col-medium">
-      <label for="name">Cest i05c</label>
-      <input type="text">
-    </div>
-    <div class="col-medium">
-      <label for="name">Cód. de barra</label>
-      <input type="text">
-    </div>
-    <div class="col-medium">
-      <label for="name">Cprodamp Ia02</label>
-      <input type="text">
-    </div>
-    <div class="col-small">
-      <label for="name">Pmixgn Ia03</label>
-      <input type="text">
-    </div>
-    <div class="col-medium">
-      <label for="name">Codif Ia04</label>
-      <input type="text">
-    </div>
-    <div class="form-nav">
-      <button>Gravar</button>
-    </div>
+  <div class="tabs">
 
-  </form>
+    <ul class="tabNavigation">
+      <li><a href="#tab01">Dados</a></li>
+      <li><a href="#tab02">Tributação</a></li>
+    </ul>
+
+    <div id="tab01">
+
+      <form action="#" class="general-form">
+        <div class="col-medium">
+          <label for="name">Código</label>
+          <input type="text">
+        </div>
+        <div class="col-small">
+          <label for="name">Situação</label>
+          <div class="select-style">
+            <select type="text">
+              <option>Ativo</option>
+              <option>Inativo</option>
+            </select>
+          </div>
+        </div>
+        <div class="col-large">
+          <label for="name">Descrição</label>
+          <textarea></textarea>
+        </div>
+        <div class="col-medium">
+          <label for="name">Preço venda</label>
+          <input type="text">
+        </div>
+        <div class="col-medium">
+          <label for="name">Preço atacado</label>
+          <input type="text">
+          <span class="error">Preencha este campo</span>
+        </div>
+        <div class="col-medium">
+          <label for="name">ID unidade medida</label>
+          <div class="select-style">
+            <select type="text">
+              <option>Unidade(s)</option>
+              <option>Litro(s)</option>
+              <option>Caixa(s)</option>
+            </select>
+          </div>
+        </div>
+        <div class="col-medium">
+          <label for="name">ID ncm</label>
+          <select id="id-ncm">
+          </select>
+        </div>
+        <div class="col-medium">
+          <label for="name">Cest i05c</label>
+          <input type="text">
+        </div>
+        <div class="col-medium">
+          <label for="name">Cód. de barra</label>
+          <input type="text">
+        </div>
+        <div class="col-medium">
+          <label for="name">Cprodamp Ia02</label>
+          <input type="text">
+        </div>
+        <div class="col-small">
+          <label for="name">Pmixgn Ia03</label>
+          <input type="text">
+        </div>
+        <div class="col-medium">
+          <label for="name">Codif Ia04</label>
+          <input type="text">
+        </div>
+
+      </form>
+
+    </div> <!-- /tab01 -->
+
+    <div id="tab02">
+
+      <form action="#" class="general-form">
+        <div class="col-medium">
+          <label for="name">Origem</label>
+          <input type="text">
+        </div>
+      </form>
+
+    </div> <!-- /tab02 -->
+
+  </div> <!-- /tabs -->
+
+  <div class="form-nav">
+    <button>Gravar</button>
+  </div>
 
 </section> <!-- /entry -->
 

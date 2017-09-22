@@ -88,6 +88,34 @@ table {
 }
 
 
+/* Tabs */
+
+.tabNavigation {
+  height: 40px;
+  line-height: 39px;
+  padding: 0 20px;
+  margin: 0;
+  border-bottom: 1px solid $light-gray;
+
+  li {
+    list-style-type: none;
+    display: inline-block;
+    margin-right: 20px;
+  }
+
+  a {
+    text-transform: uppercase;
+    text-decoration: none;
+    font-weight: bold;
+    color: $medium-gray;
+  }
+
+  .selected {
+    color: $light-green;
+  }
+}
+
+
 /* Actions bar */
 
 .actions-bar {
