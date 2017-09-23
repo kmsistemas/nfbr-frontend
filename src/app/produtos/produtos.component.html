@@ -7,7 +7,7 @@
         <i class="fa fa-search"></i>
       </button>
     </form>
-    <a [routerLink]="['/unidade_medida/novo']">
+    <a [routerLink]="['/produto/novo']">
       <i class="fa fa-plus"></i>Adicionar
     </a>
   </div>
@@ -17,20 +17,20 @@
       <thead>
         <tr>
           <th class="algn-center">#</th>
-          <th>SIGLA</th>
+          <th>CÓDIGO</th>
           <th>DESCRIÇÃO</th>
           <th class="algn-center"></th>
         </tr>
       </thead>
       <tbody>
-        <tr *ngFor="let unidadeMedida of unidadesMedida">
+        <tr *ngFor="let produto of produtos">
           <td class="algn-center">
-            <strong>{{unidadeMedida.id_unidade_medida}}</strong>
+            <strong>{{produto.id_produto}}</strong>
           </td>
-          <td>{{unidadeMedida.sigla}}</td>
-          <td>{{unidadeMedida.descricao}}</td>
+          <td>{{produto.codigo}}</td>
+          <td>{{produto.descricao}}</td>
           <td class="algn-center">
-            <a class="edit-link" [routerLink]="['/unidade_medida', unidadeMedida.id_unidade_medida]"><i class="fa fa-pencil"></i></a>
+            <a class="edit-link" href="#"><i class="fa fa-pencil"></i></a>
             <a class="delete-link" href="#"><i class="fa fa-trash"></i></a>
           </td>
         </tr>

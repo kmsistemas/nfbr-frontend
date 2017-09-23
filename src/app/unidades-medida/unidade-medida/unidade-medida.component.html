@@ -1,98 +1,49 @@
 <section class="entry form-entry">
 
-  <div class="tabs">
+  <form *ngIf="unidadeMedidaForm" [formGroup]="unidadeMedidaForm" class="general-form" novalidate>
 
-    <ul class="tabNavigation">
-      <li><a href="#tab01">Dados</a></li>
-      <li><a href="#tab02">Tributação</a></li>
-    </ul>
+    <div class="col-small">
+      <km-input-container errorMessage="Campo Obrigatório" label="Sigla">
+        <input type="text" formControlName="sigla" id="sigla" autocomplete="off">
+      </km-input-container>
+    </div>
+    <div class="col-large">
+      <km-input-container errorMessage="Campo Obrigatório" label="Descrição">
+        <input type="text" formControlName="descricao" id="descricao" autocomplete="off">
+      </km-input-container>
+    </div>
 
-    <div id="tab01">
+    <div class="form-nav">
+      <button (click)="saveUnidadeMedida(unidadeMedidaForm.value)" [disabled]="!unidadeMedidaForm.valid">
+        Gravar
+      </button>
+    </div>
 
-      <form action="#" class="general-form">
-        <div class="col-medium">
-          <label for="name">Código</label>
-          <input type="text">
-        </div>
-        <div class="col-small">
-          <label for="name">Situação</label>
-          <div class="select-style">
-            <select type="text">
-              <option>Ativo</option>
-              <option>Inativo</option>
-            </select>
-          </div>
-        </div>
-        <div class="col-large">
-          <label for="name">Descrição</label>
-          <textarea></textarea>
-        </div>
-        <div class="col-medium">
-          <label for="name">Preço venda</label>
-          <input type="text">
-        </div>
-        <div class="col-medium">
-          <label for="name">Preço atacado</label>
-          <input type="text">
-          <span class="error">Preencha este campo</span>
-        </div>
-        <div class="col-medium">
-          <label for="name">ID unidade medida</label>
-          <div class="select-style">
-            <select type="text">
-              <option>Unidade(s)</option>
-              <option>Litro(s)</option>
-              <option>Caixa(s)</option>
-            </select>
-          </div>
-        </div>
-        <div class="col-medium">
-          <label for="name">ID ncm</label>
-          <select id="id-ncm">
-          </select>
-        </div>
-        <div class="col-medium">
-          <label for="name">Cest i05c</label>
-          <input type="text">
-        </div>
-        <div class="col-medium">
-          <label for="name">Cód. de barra</label>
-          <input type="text">
-        </div>
-        <div class="col-medium">
-          <label for="name">Cprodamp Ia02</label>
-          <input type="text">
-        </div>
-        <div class="col-small">
-          <label for="name">Pmixgn Ia03</label>
-          <input type="text">
-        </div>
-        <div class="col-medium">
-          <label for="name">Codif Ia04</label>
-          <input type="text">
-        </div>
+  </form>
 
-      </form>
 
-    </div> <!-- /tab01 -->
+  <!--<form>-->
 
-    <div id="tab02">
+    <!--<div class="tabs">-->
 
-      <form action="#" class="general-form">
-        <div class="col-medium">
-          <label for="name">Origem</label>
-          <input type="text">
-        </div>
-      </form>
+      <!--<ul class="tabNavigation">-->
+        <!--<li><a href="#tab01">Tab 1</a></li>-->
+        <!--<li><a href="#tab02">Tab 2</a></li>-->
+      <!--</ul>-->
 
-    </div> <!-- /tab02 -->
+      <!--<div id="tab01">-->
+        <!--campos...-->
+      <!--</div>-->
 
-  </div> <!-- /tabs -->
 
-  <div class="form-nav">
-    <button>Gravar</button>
-  </div>
+    <!--</div>-->
+
+    <!--<div class="form-nav">-->
+      <!--<button >-->
+        <!--Gravar-->
+      <!--</button>-->
+    <!--</div>-->
+
+  <!--</form>-->
 
 </section> <!-- /entry -->
-
-<link href="/assets/public/stylesheet/select2/select2.min.css" rel="stylesheet" />

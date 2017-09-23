@@ -1,0 +1,3 @@
+<label [for]="input.name">{{label}}</label>
+<ng-content></ng-content>
+<span class="error" *ngIf="hasError()"><i class="fa fa-remove"></i> {{errorMessage}}</span>

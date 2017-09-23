@@ -22,6 +22,10 @@ export class CoreService {
   email: string;
   avatar: string;
 
+  headersAjax: any;
+  headersPost: Headers = new Headers();
+  optionsPost: any;
+
   constructor(private http: Http, private router: Router) {
     // this.headers.append('Authorization', 'Basic ' + btoa(this.username + ':' + this.password));
     // this.headers.append('Content-Type', 'application/x-www-form-urlencoded');
@@ -42,7 +46,12 @@ export class CoreService {
       this.avatar = currentUser.avatar;
 
       this.headers.set('Authorization', 'JWT ' + this.token);
+      this.headersAjax = {'Authorization': 'JWT ' + this.token};
+      this.headersPost.set('Authorization', 'JWT ' + this.token);
+      this.headersPost.append('Content-Type', 'application/json');
+
       this.options = new RequestOptions({headers: this.headers});
+      this.optionsPost = new RequestOptions({headers: this.headersPost});
 
       if (!refreshContribuinte) {
         this.getContribuintes();
@@ -113,6 +122,16 @@ export class CoreService {
     this.router.navigate(['/']);
   }
 
+  produtos(page?: number, limit?: number): Observable<any> {
+    // aqui tem que chamar refresh() antes...
+
+    let _offset;
+    _offset = (page - 1) * limit;
+    return this.http.get(`${NFBR_API}/produto/?limit=${limit}&offset=${_offset}`, this.options)
+      .map(response => response.json())
+      .catch(ErrorHandler.handlerError);
+  }
+
   unidadeMedida(page?: number, limit?: number): Observable<any> {
     // aqui tem que chamar refresh() antes...
 
@@ -121,6 +140,20 @@ export class CoreService {
     return this.http.get(`${NFBR_API}/unidade_medida/?limit=${limit}&offset=${_offset}`, this.options)
       .map(response => response.json())
       .catch(ErrorHandler.handlerError);
+  }
+
+  unidadeMedidaById(id: string): Observable<any> {
+    return this.http.get(`${NFBR_API}/unidade_medida/${id}/`, this.options)
+      .map(response => response.json())
+      .catch(ErrorHandler.handlerError);
+  }
+
+  saveUnidadeMedida(unidadeMedida: any): Observable<string> {
+    return this.http.post(`${NFBR_API}/unidade_medida/`,
+                          JSON.stringify(unidadeMedida),
+                          this.optionsPost)
+                    .map(response => response.json());
+                    // .map(unidadeMedida => unidadeMedida.id_unidade_medida);
   }
 
   uf(): Observable<Uf[]> {
@@ -135,6 +168,12 @@ export class CoreService {
     .catch(ErrorHandler.handlerError).subscribe(response => {
       this.contribuintes = response;
     });
+  }
+
+  lookupNcm(): Observable<any> {
+    return this.http.get(`${NFBR_API}/lookups/ncm/`, this.options)
+      .map(response => response.json())
+      .catch(ErrorHandler.handlerError);
   }
 
 }

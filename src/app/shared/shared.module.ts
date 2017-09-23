@@ -3,12 +3,13 @@ import {CommonModule} from '@angular/common';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {PaginationComponent} from "./pagination/pagination.component";
 import {CoreService} from "../core/core.service";
+import {InputComponent} from "./input/input.component";
 
 
 @NgModule({
-  declarations: [PaginationComponent],
+  declarations: [InputComponent, PaginationComponent],
   imports: [CommonModule, FormsModule, ReactiveFormsModule],
-  exports: [PaginationComponent,
+  exports: [InputComponent, PaginationComponent,
             CommonModule, FormsModule, ReactiveFormsModule],
 })
 export class SharedModule {
