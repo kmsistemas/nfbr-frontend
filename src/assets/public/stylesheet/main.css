@@ -214,14 +214,15 @@ header {
       border-top: none;
       box-shadow: none;
       position: inherit;
-      padding: 0;
-      min-height: 140px; } }
+      padding: 0; } }
   .dropdown .arrow-box > div {
     width: 180px;
     float: left; }
     @media (max-width: 860px) {
       .dropdown .arrow-box > div {
-        margin-top: 0; } }
+        width: 100%;
+        margin-top: 0;
+        float: none; } }
   .dropdown a {
     color: #999;
     text-decoration: none;

@@ -94,7 +94,6 @@
     box-shadow: none;
     position: inherit;
     padding: 0;
-    min-height: 140px;
   }
 
   .arrow-box > div {
@@ -102,7 +101,9 @@
     float: left;
 
     @media (max-width: 860px) {
+      width: 100%;
       margin-top: 0;
+      float: none;
     }
   }
 
