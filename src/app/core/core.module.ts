@@ -1,7 +1,7 @@
-import {NgModule} from "@angular/core";
-import {CoreService} from "./core.service";
-import {AuthenticationService} from "./authentication.service";
-import {AuthModule, PROTECTED_FALLBACK_PAGE_URI, PUBLIC_FALLBACK_PAGE_URI, AUTH_SERVICE} from "ngx-auth";
+import {NgModule} from '@angular/core';
+import {CoreService} from './core.service';
+import {AuthenticationService} from './authentication.service';
+import {AuthModule, PROTECTED_FALLBACK_PAGE_URI, PUBLIC_FALLBACK_PAGE_URI, AUTH_SERVICE} from 'ngx-auth';
 
 
 @NgModule({

@@ -3,8 +3,7 @@ import {CoreService} from "../core/core.service";
 
 @Component({
   selector: 'km-produtos',
-  templateUrl: './produtos.component.html',
-  styleUrls: ['./produtos.component.css']
+  templateUrl: './produtos.component.html'
 })
 export class ProdutosComponent implements OnInit {
   produtos: any;

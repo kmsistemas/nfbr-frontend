@@ -30,7 +30,7 @@
           <td>{{produto.codigo}}</td>
           <td>{{produto.descricao}}</td>
           <td class="algn-center">
-            <a class="edit-link" href="#"><i class="fa fa-pencil"></i></a>
+            <a class="edit-link" [routerLink]="['/produto', produto.id_produto]"><i class="fa fa-pencil"></i></a>
             <a class="delete-link" href="#"><i class="fa fa-trash"></i></a>
           </td>
         </tr>

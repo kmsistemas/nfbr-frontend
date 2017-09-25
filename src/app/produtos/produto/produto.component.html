@@ -1,74 +1,41 @@
 <section class="entry form-entry">
 
-  <form action="#" class="general-form">
+  <form *ngIf="produtoForm" [formGroup]="produtoForm" class="general-form" novalidate>
     <div class="col-medium">
-      <label for="name">Código</label>
-      <input type="text">
+      <km-input-container errorMessage="Campo Obrigatório" label="Código">
+        <input type="text" formControlName="codigo" id="codigo" autocomplete="off">
+      </km-input-container>
     </div>
     <div class="col-small">
-      <label for="name">Situação</label>
+      <label for="situacao">Situação</label>
       <div class="select-style">
-        <select type="text">
+        <select type="text" formControlName="situacao" id="situacao" autocomplete="off">
           <option>Ativo</option>
           <option>Inativo</option>
         </select>
       </div>
     </div>
     <div class="col-large">
-      <label for="name">Descrição</label>
-      <textarea></textarea>
+      <km-input-container errorMessage="Campo Obrigatório" label="Descrição">
+        <input type="text" formControlName="descricao" id="descricao" autocomplete="off">
+      </km-input-container>
     </div>
+
     <div class="col-medium">
-      <label for="name">Preço venda</label>
-      <input type="text">
+      <label for="ncm">ID ncm</label>
+      <select2 [options]="options" id="ncm"></select2>
     </div>
-    <div class="col-medium">
-      <label for="name">Preço atacado</label>
-      <input type="text">
-      <span class="error">Preencha este campo</span>
-    </div>
-    <div class="col-medium">
-      <label for="name">ID unidade medida</label>
-      <div class="select-style">
-        <select type="text">
-          <option>Unidade(s)</option>
-          <option>Litro(s)</option>
-          <option>Caixa(s)</option>
-        </select>
-      </div>
-    </div>
-    <div class="col-medium">
-      <label for="name">ID ncm</label>
-      <select2 [options]="options"></select2>
-    </div>
-    <div class="col-medium">
-      <label for="name">Cest i05c</label>
-      <input type="text">
-    </div>
-    <div class="col-medium">
-      <label for="name">Cód. de barra</label>
-      <input type="text">
-    </div>
-    <div class="col-medium">
-      <label for="name">Cprodamp Ia02</label>
-      <input type="text">
-    </div>
-    <div class="col-small">
-      <label for="name">Pmixgn Ia03</label>
-      <input type="text">
-    </div>
-    <div class="col-medium">
-      <label for="name">Codif Ia04</label>
-      <input type="text">
-    </div>
+
     <div class="form-nav">
-      <button>Gravar</button>
+      <button (click)="saveProduto(produtoForm.value)" [disabled]="!produtoForm.valid">
+        Gravar
+      </button>
     </div>
 
   </form>
 
 </section> <!-- /entry -->
 
-<link href="/assets/public/stylesheet/select2/select2.min.css" rel="stylesheet" />
-<link href="/assets/js/select2/select2.min.js" />
-<link href="/assets/js/select2/i18n/pt-BR.js" />
+<!--<link href="/assets/public/stylesheet/select2/select2.min.css" rel="stylesheet" />-->
+<!--<link href="/assets/js/select2/select2.min.js" />-->
+<!--<link href="/assets/js/select2/i18n/pt-BR.js" />-->

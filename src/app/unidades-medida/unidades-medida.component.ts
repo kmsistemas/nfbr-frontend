@@ -27,7 +27,7 @@ export class UnidadesMedidaComponent implements OnInit {
 
   getUnidadesMedida(): void {
     this.loading = true;
-    this.coreService.unidadeMedida(this.page, this.limit).subscribe(response => {
+    this.coreService.unidadesMedida(this.page, this.limit).subscribe(response => {
       this.total = response.count;
       this.unidadesMedida = response.results;
       this.loading = false;

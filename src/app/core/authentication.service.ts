@@ -1,8 +1,8 @@
 import { AuthService } from 'ngx-auth';
-import {Injectable} from "@angular/core";
-import {Http} from "@angular/http";
-import {Observable} from "rxjs";
-import {HttpErrorResponse} from "@angular/common/http";
+import {Injectable} from '@angular/core';
+import {Http} from '@angular/http';
+import {Observable} from 'rxjs';
+import {HttpErrorResponse} from '@angular/common/http';
 
 @Injectable()
 export class AuthenticationService implements AuthService {

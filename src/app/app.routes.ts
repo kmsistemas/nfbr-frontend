@@ -6,14 +6,13 @@ import {UnidadeMedidaComponent} from './unidades-medida/unidade-medida/unidade-m
 import {PublicGuard, ProtectedGuard} from 'ngx-auth';
 import {ProdutosComponent} from './produtos/produtos.component';
 import {ProdutoComponent} from './produtos/produto/produto.component';
-import {DadosComponent} from './unidades-medida/unidade-medida/dados/dados.component';
-import {TributacaoComponent} from './unidades-medida/unidade-medida/tributacao/tributacao.component';
 
 
 export const ROUTES: Routes = [
   {path: '', component: HomeComponent, canActivate: [ ProtectedGuard ]},
   {path: 'login', component: LoginComponent, canActivate: [ PublicGuard ]},
   {path: 'produto', component: ProdutosComponent, canActivate: [ ProtectedGuard ]},
+  {path: 'produto/:id', component: ProdutoComponent, canActivate: [ ProtectedGuard ]},
   {path: 'produto/novo', component: ProdutoComponent, canActivate: [ ProtectedGuard ]},
   {path: 'unidade_medida', component: UnidadesMedidaComponent, canActivate: [ ProtectedGuard ]},
   {path: 'unidade_medida/:id', component: UnidadeMedidaComponent, canActivate: [ ProtectedGuard ]},

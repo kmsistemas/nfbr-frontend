@@ -1,26 +1,34 @@
 import { Component, OnInit } from '@angular/core';
+import {FormBuilder, FormGroup, Validators} from '@angular/forms';
+import {ActivatedRoute, Router} from '@angular/router';
 import {CoreService} from '../../core/core.service';
 import {NFBR_API} from '../../app.api';
 
 
 @Component({
   selector: 'km-produto',
-  templateUrl: './produto.component.html',
-  styleUrls: ['./produto.component.css']
+  templateUrl: './produto.component.html'
 })
 export class ProdutoComponent implements OnInit {
+  produtoForm: FormGroup;
+
   // public exampleData: Array<Select2OptionData>;
   public options: Select2Options;
   public ajaxOptions: Select2AjaxOptions;
 
-  constructor(private coreService: CoreService) { }
+  constructor(
+    private coreService: CoreService,
+    private formBuilder: FormBuilder,
+    private router: Router,
+    private activatedRoute: ActivatedRoute
+  ) { }
 
   ngOnInit() {
-    // this.coreService.lookupNcm().subscribe(response => {
-    //   this.exampleData = response.results;
-    // });
+    this.coreService.produtoById(this.activatedRoute.snapshot.params['id'])
+      .subscribe(response => {
+        this.initForm(response);
+      });
 
-    console.log(this.coreService.headersAjax);
     this.ajaxOptions = {
         url: `${NFBR_API}/lookups/ncm/`,
         headers: this.coreService.headersAjax,
@@ -35,10 +43,6 @@ export class ProdutoComponent implements OnInit {
         },
         processResults: (data: any, params: any) => {
             params.page = params.page || 1;
-            console.log('data: ', data);
-
-            console.log(params.page);
-            console.log(data.count);
 
             return {
                 results: $.map(data.results, function(obj) {
@@ -56,34 +60,21 @@ export class ProdutoComponent implements OnInit {
       language: 'pt-BR',
       placeholder: 'Procure por um NCM',
     };
-
-
-
-    // this.exampleData = [
-    //   {
-    //     id: 'basic1',
-    //     text: 'Basic 1'
-    //   },
-    //   {
-    //     id: 'basic2',
-    //     disabled: true,
-    //     text: 'Basic 2'
-    //   },
-    //   {
-    //     id: 'basic3',
-    //     text: 'Basic 3'
-    //   },
-    //   {
-    //     id: 'basic4',
-    //     text: 'Basic 4'
-    //   }
-    // ];
   }
 
-  // lookupNcm(): void {
-  //   this.coreService.lookupNcm().subscribe(response => {
-  //     this.ncms = response.results;
-  //   });
-  // }
+  initForm(response: any) {
+    this.produtoForm = this.formBuilder.group({
+      codigo: this.formBuilder.control(response.codigo, [Validators.required]),
+      descricao: this.formBuilder.control(response.descricao, [Validators.required]),
+      situacao: this.formBuilder.control(response.situacao, [Validators.required]),
+    });
+  }
+
+  saveProduto(produto: any) {
+    this.coreService.saveProduto(produto)
+      .subscribe(() => {
+        this.router.navigate(['/produto']);
+      });
+  }
 
 }

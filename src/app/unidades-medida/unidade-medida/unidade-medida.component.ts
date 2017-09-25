@@ -5,8 +5,7 @@ import {ActivatedRoute, Router} from '@angular/router';
 
 @Component({
   selector: 'km-unidade-medida',
-  templateUrl: './unidade-medida.component.html',
-  styleUrls: ['./unidade-medida.component.css']
+  templateUrl: './unidade-medida.component.html'
 })
 export class UnidadeMedidaComponent implements OnInit {
   unidadeMedidaForm: FormGroup;

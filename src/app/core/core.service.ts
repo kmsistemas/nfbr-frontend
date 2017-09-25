@@ -5,7 +5,6 @@ import {Observable} from 'rxjs/Observable';
 import 'rxjs/add/operator/switchMap';
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/catch';
-// import {UnidadeMedida} from '../unidades-medida/unidades-medida.model';
 import {NFBR_API, NFBR_API_TOKEN_AUTH, NFBR_API_TOKEN_REFRESH} from '../app.api';
 import {ErrorHandler} from '../app.error-handler';
 import {Uf} from '../ufs/ufs.model';
@@ -59,22 +58,6 @@ export class CoreService {
     }
   }
 
-  alterar_contribuinte(pk: number) {
-    return this.http.post(
-      `${NFBR_API}/alterar_contribuinte_post/`,
-      {pk: pk}, this.options
-    ).map(response => {
-
-      const currentUserFromLocalStorage = JSON.parse(localStorage.getItem('currentUser'));
-      currentUserFromLocalStorage.contribuinte = response.json().contribuinte;
-      localStorage.setItem('currentUser', JSON.stringify(currentUserFromLocalStorage));
-
-      this.loadCurrentUser(true);
-
-      // this.logout();
-    });
-  }
-
   login(form: any) {
     return this.http.post(
       `${NFBR_API_TOKEN_AUTH}`,
@@ -122,17 +105,37 @@ export class CoreService {
     this.router.navigate(['/']);
   }
 
-  produtos(page?: number, limit?: number): Observable<any> {
-    // aqui tem que chamar refresh() antes...
 
-    let _offset;
-    _offset = (page - 1) * limit;
-    return this.http.get(`${NFBR_API}/produto/?limit=${limit}&offset=${_offset}`, this.options)
-      .map(response => response.json())
-      .catch(ErrorHandler.handlerError);
+  // Controles
+
+  getContribuintes(): void {
+    this.http.get(`${NFBR_API}/alterar_contribuinte/`, this.options)
+    .map(response => response.json().results)
+    .catch(ErrorHandler.handlerError).subscribe(response => {
+      this.contribuintes = response;
+    });
   }
 
-  unidadeMedida(page?: number, limit?: number): Observable<any> {
+  alterar_contribuinte(pk: number) {
+    return this.http.post(
+      `${NFBR_API}/alterar_contribuinte_post/`,
+      {pk: pk}, this.options
+    ).map(response => {
+
+      const currentUserFromLocalStorage = JSON.parse(localStorage.getItem('currentUser'));
+      currentUserFromLocalStorage.contribuinte = response.json().contribuinte;
+      localStorage.setItem('currentUser', JSON.stringify(currentUserFromLocalStorage));
+
+      this.loadCurrentUser(true);
+
+      // this.logout();
+    });
+  }
+
+
+  // Telas
+
+  unidadesMedida(page?: number, limit?: number): Observable<any> {
     // aqui tem que chamar refresh() antes...
 
     let _offset;
@@ -156,19 +159,37 @@ export class CoreService {
                     // .map(unidadeMedida => unidadeMedida.id_unidade_medida);
   }
 
+  produtos(page?: number, limit?: number): Observable<any> {
+    // aqui tem que chamar refresh() antes...
+
+    let _offset;
+    _offset = (page - 1) * limit;
+    return this.http.get(`${NFBR_API}/produto/?limit=${limit}&offset=${_offset}`, this.options)
+      .map(response => response.json())
+      .catch(ErrorHandler.handlerError);
+  }
+
+  produtoById(id: string): Observable<any> {
+    return this.http.get(`${NFBR_API}/produto/${id}/`, this.options)
+      .map(response => response.json())
+      .catch(ErrorHandler.handlerError);
+  }
+
+  saveProduto(produto: any): Observable<string> {
+    return this.http.post(`${NFBR_API}/produto/`,
+                          JSON.stringify(produto),
+                          this.optionsPost)
+                    .map(response => response.json());
+  }
+
   uf(): Observable<Uf[]> {
     return this.http.get(`${NFBR_API}/uf/`, this.options)
       .map(response => response.json().results)
       .catch(ErrorHandler.handlerError);
   }
 
-  getContribuintes(): void {
-    this.http.get(`${NFBR_API}/alterar_contribuinte/`, this.options)
-    .map(response => response.json().results)
-    .catch(ErrorHandler.handlerError).subscribe(response => {
-      this.contribuintes = response;
-    });
-  }
+
+  // Lookups
 
   lookupNcm(): Observable<any> {
     return this.http.get(`${NFBR_API}/lookups/ncm/`, this.options)

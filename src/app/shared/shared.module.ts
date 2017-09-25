@@ -1,9 +1,9 @@
 import {ModuleWithProviders, NgModule} from '@angular/core';
 import {CommonModule} from '@angular/common';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
-import {PaginationComponent} from "./pagination/pagination.component";
-import {CoreService} from "../core/core.service";
-import {InputComponent} from "./input/input.component";
+import {PaginationComponent} from './pagination/pagination.component';
+import {CoreService} from '../core/core.service';
+import {InputComponent} from './input/input.component';
 
 
 @NgModule({
