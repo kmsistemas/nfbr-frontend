@@ -326,6 +326,8 @@ ENTRY
     font-size: 12px;
     text-transform: uppercase;
     color: #666; }
+  .login-entry .form-nav {
+    padding: 0 !important; }
 
 /**
 ASIDE
