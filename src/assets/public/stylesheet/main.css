@@ -326,8 +326,6 @@ ENTRY
     font-size: 12px;
     text-transform: uppercase;
     color: #666; }
-  .login-entry .form-nav {
-    padding: 0 !important; }
 
 /**
 ASIDE
@@ -638,8 +636,7 @@ form input[type="checkbox"] {
 /* Form bottom nav */
 .form-nav {
   width: 100%;
-  margin-top: 20px;
-  padding: 0 20px 20px 20px; }
+  margin-top: 20px; }
   .form-nav button {
     border-radius: 2px;
     height: 36px;
