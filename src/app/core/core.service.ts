@@ -170,9 +170,13 @@ export class CoreService {
   }
 
   produtoById(id: string): Observable<any> {
-    return this.http.get(`${NFBR_API}/produto/${id}/`, this.options)
-      .map(response => response.json())
-      .catch(ErrorHandler.handlerError);
+    if (id === undefined) {
+      return Observable.empty<Response>();
+    } else {
+      return this.http.get(`${NFBR_API}/produto/${id}/`, this.options)
+        .map(response => response.json())
+        .catch(ErrorHandler.handlerError);
+    }
   }
 
   saveProduto(produto: any): Observable<string> {
