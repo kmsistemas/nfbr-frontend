@@ -26,6 +26,7 @@ export class ProdutoComponent implements OnInit {
   ngOnInit() {
     this.coreService.produtoById(this.activatedRoute.snapshot.params['id'])
       .subscribe(response => {
+        console.log('antessss');
         this.initForm(response);
       });
 
@@ -63,6 +64,7 @@ export class ProdutoComponent implements OnInit {
   }
 
   initForm(response: any) {
+    console.log('chegou aqui!!!');
     this.produtoForm = this.formBuilder.group({
       codigo: this.formBuilder.control(response.codigo, [Validators.required]),
       descricao: this.formBuilder.control(response.descricao, [Validators.required]),
