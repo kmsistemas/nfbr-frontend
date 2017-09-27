@@ -180,10 +180,17 @@ export class CoreService {
   }
 
   saveProduto(produto: any): Observable<string> {
-    return this.http.post(`${NFBR_API}/produto/`,
-                          JSON.stringify(produto),
-                          this.optionsPost)
-                    .map(response => response.json());
+    if (produto.id_produto) {
+      return this.http.put(`${NFBR_API}/produto/${produto.id_produto}/`,
+                            JSON.stringify(produto),
+                            this.optionsPost)
+                      .map(response => response.json());
+    } else {
+      return this.http.post(`${NFBR_API}/produto/`,
+                            JSON.stringify(produto),
+                            this.optionsPost)
+                      .map(response => response.json());
+    }
   }
 
   uf(): Observable<Uf[]> {

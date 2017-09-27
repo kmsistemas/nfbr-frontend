@@ -1,6 +1,8 @@
 <section class="entry form-entry">
 
   <form *ngIf="produtoForm" [formGroup]="produtoForm" class="general-form" novalidate>
+    <input type="hidden" formControlName="id_produto">
+
     <div class="col-medium">
       <km-input-container errorMessage="Campo Obrigatório" label="Código">
         <input type="text" formControlName="codigo" id="codigo" autocomplete="off">
@@ -10,8 +12,8 @@
       <label for="situacao">Situação</label>
       <div class="select-style">
         <select type="text" formControlName="situacao" id="situacao" autocomplete="off">
-          <option>Ativo</option>
-          <option>Inativo</option>
+          <option>A</option>
+          <option>I</option>
         </select>
       </div>
     </div>
@@ -22,9 +24,74 @@
     </div>
 
     <div class="col-medium">
-      <label for="ncm">ID ncm</label>
-      <select2 [options]="options" id="ncm"></select2>
+      <label for="id_ncm">NCM</label>
+      <select2 [options]="optionsNcm" (valueChanged)="changedNcm($event)" id="id_ncm"></select2> <!--ngDefaultControl-->
+      <input type="hidden" formControlName="id_ncm" autocomplete="off">
     </div>
+
+    <div class="col-small">
+      <km-input-container errorMessage="Campo Obrigatório" label="Preço Venda">
+        <input type="text" formControlName="preco_venda" id="preco_venda" autocomplete="off">
+      </km-input-container>
+    </div>
+
+    <div class="col-small">
+      <km-input-container errorMessage="Campo Obrigatório" label="Origem">
+        <input type="text" formControlName="origem" id="origem" autocomplete="off">
+      </km-input-container>
+    </div>
+
+    <div class="col-medium">
+      <label for="id_unidade_medida">Unidade de Medida</label>
+      <select2 [options]="optionsUnidadeMedida" (valueChanged)="changedUnidadeMedida($event)" id="id_unidade_medida"></select2>
+      <input type="hidden" formControlName="id_unidade_medida" autocomplete="off">
+    </div>
+
+    <div class="col-medium">
+      <label for="id_cst_icms">CST ICMS</label>
+      <select2 [options]="optionsCstIcms" (valueChanged)="changedCstIcms($event)" id="id_cst_icms"></select2>
+      <input type="hidden" formControlName="id_cst_icms" autocomplete="off">
+    </div>
+
+    <div class="col-small">
+      <km-input-container errorMessage="" label="% ICMS">
+        <input type="text" formControlName="aliq_icms" id="aliq_icms" autocomplete="off">
+      </km-input-container>
+    </div>
+
+    <div class="col-medium">
+      <label for="id_cst_pis">CST PIS</label>
+      <select2 [options]="optionsCstPis" (valueChanged)="changedCstPis($event)" id="id_cst_pis"></select2>
+      <input type="hidden" formControlName="id_cst_pis" autocomplete="off">
+    </div>
+
+    <div class="col-small">
+      <km-input-container errorMessage="" label="% PIS">
+        <input type="text" formControlName="aliq_pis" id="aliq_pis" autocomplete="off">
+      </km-input-container>
+    </div>
+
+    <div class="col-medium">
+      <label for="id_cst_cofins">CST COFINS</label>
+      <select2 [options]="optionsCstCofins" (valueChanged)="changedCstCofins($event)" id="id_cst_cofins"></select2>
+      <input type="hidden" formControlName="id_cst_cofins" autocomplete="off">
+    </div>
+
+    <div class="col-small">
+      <km-input-container errorMessage="" label="% COFINS">
+        <input type="text" formControlName="aliq_cofins" id="aliq_cofins" autocomplete="off">
+      </km-input-container>
+    </div>
+
+    <div class="col-medium">
+      <label for="id_cfop">CFOP</label>
+      <select2 [options]="optionsCfop" (valueChanged)="changedCfop($event)" id="id_cfop"></select2>
+      <input type="hidden" formControlName="id_cfop" autocomplete="off">
+    </div>
+
+
+
+
 
     <div class="form-nav">
       <button (click)="saveProduto(produtoForm.value)" [disabled]="!produtoForm.valid">
@@ -33,6 +100,10 @@
     </div>
 
   </form>
+
+  <!--<div class="col-medium">-->
+    <!--<p-dropdown [options]="cities" [(ngModel)]="selectedCity"></p-dropdown>-->
+  <!--</div>-->
 
 </section> <!-- /entry -->
 
