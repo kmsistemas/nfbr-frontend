@@ -12,9 +12,9 @@ export const ROUTES: Routes = [
   {path: '', component: HomeComponent, canActivate: [ ProtectedGuard ]},
   {path: 'login', component: LoginComponent, canActivate: [ PublicGuard ]},
   {path: 'produto', component: ProdutosComponent, canActivate: [ ProtectedGuard ]},
+  {path: 'produto/novo', component: ProdutoComponent, canActivate: [ ProtectedGuard ]},
   {path: 'produto/:id', component: ProdutoComponent, canActivate: [ ProtectedGuard ]},
-  {path: 'produto_novo', component: ProdutoComponent, canActivate: [ ProtectedGuard ]},
   {path: 'unidade_medida', component: UnidadesMedidaComponent, canActivate: [ ProtectedGuard ]},
-  {path: 'unidade_medida/:id', component: UnidadeMedidaComponent, canActivate: [ ProtectedGuard ]},
-  {path: 'unidade_medida/novo', component: UnidadeMedidaComponent, canActivate: [ ProtectedGuard ]}
+  {path: 'unidade_medida/novo', component: UnidadeMedidaComponent, canActivate: [ ProtectedGuard ]},
+  {path: 'unidade_medida/:id', component: UnidadeMedidaComponent, canActivate: [ ProtectedGuard ]}
 ];

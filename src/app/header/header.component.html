@@ -6,7 +6,7 @@
     <h1>{{contribuinte()}}</h1>
     <nav *ngIf="contribuinte()">
       <ul>
-        <li><a href="#" class="product" href="#" tabindex="2">Produto</a></li>
+        <li><a [routerLink]="['/produto']" class="product" href="#" tabindex="2">Produto</a></li>
         <li><a href="#" class="nfce" tabindex="3">NFCe</a></li>
         <li><a href="#" class="nfcemonitor" tabindex="4">Monitor NFCe</a></li>
       </ul>
