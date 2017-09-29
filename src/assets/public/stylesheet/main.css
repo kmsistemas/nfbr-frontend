@@ -572,6 +572,7 @@ form input[type="text"],
 form input[type="email"],
 form input[type="tel"],
 form input[type="password"],
+form input[type="number"],
 form textarea {
   border-radius: 2px;
   border: 1px solid #ddd;
@@ -620,7 +621,8 @@ form input[type="checkbox"] {
   .general-form input[type="text"],
   .general-form input[type="email"],
   .general-form input[type="tel"],
-  .general-form input[type="password"] {
+  .general-form input[type="password"],
+  .general-form input[type="number"] {
     height: 36px;
     line-height: 36px; }
   .general-form > div {

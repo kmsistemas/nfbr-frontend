@@ -30,6 +30,7 @@ form {
   input[type="email"],
   input[type="tel"],
   input[type="password"],
+  input[type="number"],
   textarea {
     border-radius: 2px;
     border: 1px solid $light-gray-4;
@@ -93,7 +94,8 @@ form {
   input[type="text"],
   input[type="email"],
   input[type="tel"],
-  input[type="password"] {
+  input[type="password"],
+  input[type="number"] {
     height: 36px;
     line-height: 36px;
   }
